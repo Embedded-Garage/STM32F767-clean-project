@@ -1,6 +1,6 @@
 CC=arm-none-eabi-gcc
 CFLAGS=
-LDFLAGS= -specs=nosys.specs
+LDFLAGS= -specs=nosys.specs -TSTM32F767ZITx_FLASH.ld
 
 all: main.bin
 
