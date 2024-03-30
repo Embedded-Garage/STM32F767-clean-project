@@ -1,6 +1,6 @@
 CC=arm-none-eabi-gcc
 CFLAGS=
-LDFLAGS=
+LDFLAGS= -specs=nosys.specs
 
 all: main.bin
 
