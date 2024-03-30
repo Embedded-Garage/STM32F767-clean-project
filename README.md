@@ -10,6 +10,8 @@
 
 [4. Linker script](Chapters/4.%20Linker%20script.md)
 
+[5. Startup file](Chapters/5.%20Startup%20file.md)
+
 ## Prerequisities:
 You should have arm-none-eabi toolchain installed [ARM GNU toolchain](https://developer.arm.com/downloads/-/gnu-rm)
 
