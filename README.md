@@ -3,6 +3,8 @@
 ## Table of Contents:
 [1. main.c](Chapters/1.%20main.c%20file.md)
 
+[2. Makefile](Chapters/2.%20Makefile.md)
+
 ## Prerequisities:
 You should have arm-none-eabi toolchain installed [ARM GNU toolchain](https://developer.arm.com/downloads/-/gnu-rm)
 
