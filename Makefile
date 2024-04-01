@@ -1,7 +1,11 @@
+CPU = -mthumb -mcpu=cortex-m7 -mfloat-abi=softfp -mfpu=fpv5-d16
+OPT = -g -gdwarf-2
+
+CFLAGS=  $(CPU) $(OPT)
+ASFLAGS = $(CPU) $(OPT)
+LDFLAGS= -specs=nosys.specs -TSTM32F767ZITx_FLASH.ld -Wl,-Map=main.map,--cref $(CPU) $(OPT)
+
 CC=arm-none-eabi-gcc
-CFLAGS=
-ASFLAGS =
-LDFLAGS= -specs=nosys.specs -TSTM32F767ZITx_FLASH.ld
 
 all: main.bin
 

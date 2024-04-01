@@ -12,6 +12,8 @@
 
 [5. Startup file](Chapters/5.%20Startup%20file.md)
 
+[6. Compilation flags](Chapters/6.%20Compilation%20flags.md)
+
 ## Prerequisities:
 You should have arm-none-eabi toolchain installed [ARM GNU toolchain](https://developer.arm.com/downloads/-/gnu-rm)
 
