@@ -14,6 +14,8 @@
 
 [6. Compilation flags](Chapters/6.%20Compilation%20flags.md)
 
+[7. Debug in VSCode](Chapters/7.%20Debug%20in%20VSCode.md)
+
 ## Prerequisities:
 You should have arm-none-eabi toolchain installed [ARM GNU toolchain](https://developer.arm.com/downloads/-/gnu-rm)
 
