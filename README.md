@@ -16,6 +16,8 @@
 
 [7. Debug in VSCode](Chapters/7.%20Debug%20in%20VSCode.md)
 
+[8. Structure of files in project](Chapters/8.%20Files%20structure%20in%20project.md)
+
 ## Prerequisities:
 You should have arm-none-eabi toolchain installed [ARM GNU toolchain](https://developer.arm.com/downloads/-/gnu-rm)
 
