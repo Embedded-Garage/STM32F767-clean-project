@@ -19,5 +19,10 @@
 ## Prerequisities:
 You should have arm-none-eabi toolchain installed [ARM GNU toolchain](https://developer.arm.com/downloads/-/gnu-rm)
 
+If you don't have "make" program, then yo should install it by `chocolatey`:
+- install [Chocolatey](https://chocolatey.org/install)
+- after installing, run command `choco install make`
+- now you should be able to run `make` command
+
 ## Compile:
 To compile current version of project, use `make` command.
