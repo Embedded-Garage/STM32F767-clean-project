@@ -7,6 +7,16 @@ LDFLAGS= -specs=nosys.specs -TSTM32F767ZITx_FLASH.ld -Wl,-Map=main.map,--cref $(
 
 CC=arm-none-eabi-gcc
 
+ifdef OS
+   RM = del /Q
+   FixPath = $(subst /,\,$1)
+else
+   ifeq ($(shell uname), Linux)
+      RM = rm -f
+      FixPath = $1
+   endif
+endif
+
 all: main.bin
 
 %.o: %.c
@@ -20,4 +30,4 @@ main.bin: main.o syscalls.o startup_stm32f767xx.o
 	arm-none-eabi-objcopy -O binary main.elf main.bin
 
 clean:
-	rm -f *.o *.elf *.bin
+	$(RM) $(call FixPath,*.o *.elf *.bin)
