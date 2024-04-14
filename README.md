@@ -18,6 +18,8 @@
 
 [8. Structure of files in project](Chapters/8.%20Files%20structure%20in%20project.md)
 
+[9. Unit tests with ThrowTheSwitch Unity framework](Chapters/9.%20Unit%20tests%20with%20Unity.md)
+
 ## Prerequisities:
 You should have arm-none-eabi toolchain installed [ARM GNU toolchain](https://developer.arm.com/downloads/-/gnu-rm)
 
