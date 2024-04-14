@@ -24,5 +24,10 @@ If you don't have "make" program, then yo should install it by `chocolatey`:
 - after installing, run command `choco install make`
 - now you should be able to run `make` command
 
+If you experience an error with `rm` command on windows, you should install `CoreUtils`:
+- download "Complete package, except sources" from [CoreUtils for Windows](https://gnuwin32.sourceforge.net/packages/coreutils.htm)
+- install wherever you want
+- add path to `bin` folder from installed package to `Path` environment variable
+
 ## Compile:
 To compile current version of project, use `make` command.
