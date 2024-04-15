@@ -1,23 +1,38 @@
-CPU = -mthumb -mcpu=cortex-m7 -mfloat-abi=softfp -mfpu=fpv5-d16
-OPT = -g -gdwarf-2
+OUT_DIR = out
 
-CFLAGS=  $(CPU) $(OPT)
-ASFLAGS = $(CPU) $(OPT)
-LDFLAGS= -specs=nosys.specs -TSTM32F767ZITx_FLASH.ld -Wl,-Map=main.map,--cref $(CPU) $(OPT)
+LINKER_SCRIPT := sys/STM32F767ZITx_FLASH.ld
+TARGET_BINARY := $(OUT_DIR)/main
 
-CC=arm-none-eabi-gcc
+include sys/sys.mk
 
-all: main.bin
+SRCS = \
+sys/syscalls.c \
+main.c \
+sys/startup_stm32f767xx.s
 
-%.o: %.c
+OBJS := $(SRCS:%=$(OUT_DIR)/%.o)
+
+all: $(TARGET_BINARY).bin $(TARGET_BINARY).hex
+
+$(TARGET_BINARY).bin: $(TARGET_BINARY).elf
+	@ mkdir -p $(dir $@)
+	arm-none-eabi-objcopy -O binary $< $@
+
+$(TARGET_BINARY).hex: $(TARGET_BINARY).elf
+	@ mkdir -p $(dir $@)
+	arm-none-eabi-objcopy -O ihex $< $@
+
+$(TARGET_BINARY).elf: $(OBJS)
+	@ mkdir -p $(dir $@)
+	$(CC) $(LDFLAGS) $^ -o $@
+
+$(OUT_DIR)/%.c.o: %.c
+	@ mkdir -p $(dir $@)
 	$(CC) -c $(CFLAGS) $< -o $@
 
-%.o: %.s
+$(OUT_DIR)/%.s.o: %.s
+	@ mkdir -p $(dir $@)
 	$(CC) -c $(ASFLAGS) $< -o $@
 
-main.bin: main.o syscalls.o startup_stm32f767xx.o
-	$(CC) $(LDFLAGS) main.o syscalls.o startup_stm32f767xx.o -o main.elf
-	arm-none-eabi-objcopy -O binary main.elf main.bin
-
 clean:
-	rm *.o *.elf *.bin
+	rm -rf $(OUT_DIR)

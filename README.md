@@ -18,6 +18,7 @@
 
 [8. Structure of files in project](Chapters/8.%20Files%20structure%20in%20project.md)
 
+[9. Modify makefiles](Chapters/9.%20Modify%20makefiles.md)
 ## Prerequisities:
 You should have arm-none-eabi toolchain installed [ARM GNU toolchain](https://developer.arm.com/downloads/-/gnu-rm)
 
